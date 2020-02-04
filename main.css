@@ -33,6 +33,13 @@ body {
     text-align: center;
 }
 
+#mid {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 #score {
     font-variant: small-caps;
     font-size: x-large;
@@ -45,7 +52,6 @@ body {
     display: flex;
     height: 200px;
     width: 200px;
-    background-image: url();
     justify-content: center;
 }
 

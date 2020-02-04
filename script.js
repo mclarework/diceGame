@@ -15,22 +15,27 @@ document.addEventListener("click",(event)=> {
                 roll.textContent = `You rolled a one! You lose. Better luck next time`
                 button.style.display = "none"
                 reset.style.display = "inline"
-                dice.style.backgroundImage = "img/dice1.png"
+                dice.style.backgroundImage = "url(img/dice1.png)"
                 break
             case num == 2:
                 roll.textContent = `You rolled a two!`
+                dice.style.backgroundImage = "url(img/dice2.png)"
                 break
             case num == 3:
                 roll.textContent = `You rolled a three!`
+                dice.style.backgroundImage = "url(img/dice3.png)"
                 break
             case num == 4:
                 roll.textContent = `You rolled a four!`
+                dice.style.backgroundImage = "url(img/dice4.png)"
                 break
             case num == 5:
                 roll.textContent = `You rolled a five!`
+                dice.style.backgroundImage = "url(img/dice5.png)"
                 break
             case num == 6:
                 roll.textContent = `You rolled a six!`
+                dice.style.backgroundImage = "url(img/dice6.png)"
                 break
         }
     }

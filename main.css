@@ -108,6 +108,11 @@ body {
         width: 125px;
     }
 
+    #roll {
+        height: 175px;
+        width: 85%;
+    }
+
     #roller {
         width: 200px;
         margin-bottom: 25px;

@@ -68,6 +68,7 @@ body {
 #roller {
     display: inline;
     font-size: x-large;
+    width: 400px;
     border-radius: 40px;
     padding: 2px 30px;
     background-color: black;
@@ -77,10 +78,28 @@ body {
 
 #reset {
     display: none;
+    width: 400px;
     font-size: x-large;
     border-radius: 40px;
     padding: 2px 30px;
     background-color: black;
     color: white;
     box-shadow: 3px 3px 5px rgb(78, 51, 0);
+}
+
+@media only screen and (max-width: 600px) {
+
+    p {
+        font-size: initial;
+    }
+
+    #dice {
+        height: 125px;
+        width: 125px;
+    }
+
+    #roller {
+        width: 200px;
+        margin-bottom: 25px;
+    }
 }

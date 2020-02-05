@@ -24,6 +24,7 @@ body {
 
 #topBar {
     display: flex;
+    width: 90%;
     font-variant: small-caps;
     font-size: x-large;
     text-shadow: 2px 2px 5px white;
@@ -52,6 +53,7 @@ body {
     display: flex;
     height: 200px;
     width: 200px;
+    background-size: contain;
     justify-content: center;
 }
 
@@ -89,8 +91,16 @@ body {
 
 @media only screen and (max-width: 600px) {
 
+    h1 {
+        font-size: x-large;
+    }
+
     p {
         font-size: initial;
+    }
+
+    #topBar {
+        width: 90%;
     }
 
     #dice {
@@ -101,5 +111,12 @@ body {
     #roller {
         width: 200px;
         margin-bottom: 25px;
+        font-size: initial;
+    }
+
+    #reset {
+        width: 200px;
+        margin-bottom: 25px;
+        font-size: initial;
     }
 }

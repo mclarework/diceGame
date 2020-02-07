@@ -1,49 +1,55 @@
 let score = document.getElementsByTagName("p")[1]
 let roll = document.getElementsByTagName("p")[2]
-let button = document.getElementById("roller")
+let roller = document.getElementById("roller")
 let reset = document.getElementById("reset")
-let dice = document.getElementById("dice")
+let cube = document.getElementsByClassName("cube")
+let rolledDice = document.getElementsByClassName("die-item")
 let current = 0
 
+
 document.addEventListener("click",(event)=> {
-    if (event.target == button) {
-        let num = Math.ceil(Math.random()*6)
+    let num = Math.ceil(Math.random() * 6)
+    cube[0].style.display = "block"
+    if (event.target == roller) {
         current+=num
         score.textContent = `Your current score is ${current}`
         switch (true) {
             case num == 1:
+                cube[0].style.transform = "rotateY(15deg) rotateX(15deg)"
                 roll.textContent = `You rolled a one! You lose. Better luck next time`
-                button.style.display = "none"
+                roller.style.display = "none"
                 reset.style.display = "inline"
-                dice.style.backgroundImage = "url(img/dice1.png)"
                 break
             case num == 2:
+                cube[0].style.transform = "rotateY(-75deg) rotateX(15deg)"
                 roll.textContent = `You rolled a two!`
-                dice.style.backgroundImage = "url(img/dice2.png)"
                 break
             case num == 3:
+                cube[0].style.transform = "rotateX(-75deg) rotateY(15deg)"
                 roll.textContent = `You rolled a three!`
-                dice.style.backgroundImage = "url(img/dice3.png)"
                 break
             case num == 4:
+                cube[0].style.transform = "rotateX(105deg) rotateY(15deg)"
                 roll.textContent = `You rolled a four!`
-                dice.style.backgroundImage = "url(img/dice4.png)"
                 break
             case num == 5:
+                cube[0].style.transform = "rotateY(105deg) rotateX(15deg)"
                 roll.textContent = `You rolled a five!`
-                dice.style.backgroundImage = "url(img/dice5.png)"
                 break
             case num == 6:
+                cube[0].style.transform = "rotateY(195deg) rotateX(15deg)"
                 roll.textContent = `You rolled a six!`
-                dice.style.backgroundImage = "url(img/dice6.png)"
                 break
         }
     }
     if (current >= 20) {
         roll.textContent = `Congratulations! You have won with a score of ${current}.`
-        button.style.display = "none"
+        roller.style.display = "none"
         reset.style.display = "inline"
     }
+    roller.disabled = "true"
+    roller.style.backgroundColor = "grey"
+    setTimeout(()=>{roller.disabled = "";roller.style.backgroundColor = "black"},1500); 
 })
 
 document.addEventListener("click",(event)=>{

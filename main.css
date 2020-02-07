@@ -25,6 +25,7 @@ body {
 #topBar {
     display: flex;
     width: 90%;
+    height:150px;
     font-variant: small-caps;
     font-size: x-large;
     text-shadow: 2px 2px 5px white;
@@ -36,9 +37,11 @@ body {
 
 #mid {
     display: flex;
-    justify-items: center;
-    flex-direction: column;
+    height: 450px;
+    width: 80%;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
 }
 
 #score {
@@ -49,13 +52,185 @@ body {
     align-items: center;
 }
 
-#dice {
-    display: flex;
+.scene {
     height: 200px;
     width: 200px;
-    background-size: contain;
-    justify-content: center;
+    perspective: 600px;
 }
+
+.cube {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 2s ease-out;
+    display: none;
+}
+
+.cube__face {
+    display: grid;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    background-color: brown;;
+    border-width: 1px;
+    border-style: solid;
+    grid-column: 1;
+    grid-row: 1;
+    grid-template-areas:
+    "one two three"
+    "four five six"
+    "seven eight nine";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    box-shadow: 1px 1px 10px rgb(192, 180, 180);;
+}
+
+.dotOne {
+    align-self: center;
+    justify-self: center;
+    grid-row:2;
+    grid-column:2;
+    border-radius: 50%;
+    background-color: yellow;
+    height: 1.25rem;
+    width: 1.25rem;
+    box-shadow: inset 1px 1px 10px rgb(192, 180, 180);
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+}
+
+.dotTwo {
+    align-self: center;
+    justify-self: center;
+    grid-row:1;
+    grid-column:1;
+    border-radius: 50%;
+    background-color: yellow;
+    height: 1.25rem;
+    width: 1.25rem;
+    box-shadow: inset 1px 1px 10px rgb(192, 180, 180);
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+}
+
+.dotThree {
+    align-self: center;
+    justify-self: center;
+    grid-row:3;
+    grid-column:3;
+    border-radius: 50%;
+    background-color: yellow;
+    height: 1.25rem;
+    width: 1.25rem;
+    box-shadow: inset 1px 1px 10px rgb(192, 180, 180);
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+}
+
+.dotFour {
+    align-self: center;
+    justify-self: center;
+    grid-row:3;
+    grid-column:3;
+    border-radius: 50%;
+    background-color: yellow;
+    height: 1.25rem;
+    width: 1.25rem;
+    box-shadow: inset 1px 1px 10px rgb(192, 180, 180);
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+}
+
+.dotFive {
+    align-self: center;
+    justify-self: center;
+    grid-row:1;
+    grid-column:3;
+    border-radius: 50%;
+    background-color: yellow;
+    height: 1.25rem;
+    width: 1.25rem;
+    box-shadow: inset 1px 1px 10px rgb(192, 180, 180);
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+}
+
+.dotSix {
+    align-self: center;
+    justify-self: center;
+    grid-row:3;
+    grid-column:1;
+    border-radius: 50%;
+    background-color: yellow;
+    height: 1.25rem;
+    width: 1.25rem;
+    box-shadow: inset 1px 1px 10px rgb(192, 180, 180);
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+}
+
+.dotSeven {
+    align-self: center;
+    justify-self: center;
+    grid-row:1;
+    grid-column:2;
+    border-radius: 50%;
+    background-color: yellow;
+    height: 1.25rem;
+    width: 1.25rem;
+    box-shadow: inset 1px 1px 10px rgb(192, 180, 180);
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+}
+
+.dotEight {
+    align-self: center;
+    justify-self: center;
+    grid-row:3;
+    grid-column:2;
+    border-radius: 50%;
+    background-color: yellow;
+    height: 1.25rem;
+    width: 1.25rem;
+    box-shadow: inset 1px 1px 10px rgb(192, 180, 180);
+    border-style: solid;
+    border-color: black;
+    border-width: 0.5px;
+}
+
+.cube__face--front {
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+.cube__face--right {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.cube__face--back {
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.cube__face--left {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cube__face--top {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.cube__face--bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+
 
 #roll{
     display: flex;
